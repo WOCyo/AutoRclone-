@@ -10,6 +10,14 @@ pip3 install -r requirements.txt  # 安装项目依赖
 ```
 然后打开这个地址：https://developers.google.com/drive/api/v3/quickstart/python ，点击```【Step 1: Turn on the Drive API】```下面的``` Enable the Drive API ```按钮，弹出的```【Configure your OAuth client】```对话框中保持默认的``` Desktop app ```不要动，点击右下角``` CREATE``` 按钮，开启成功之后点击 ```DOWNLOAD CLIENT CONFIGURATION``` 下载生成的``` credentials.json``` ，再将下载到本地的 ```credentials.json``` 上传至服务器的``` AutoRclone``` 文件夹下。
 
+**快速方法（不推荐，有时会出现 bug）：**
+
+此时回到 SSH ，执行``` python3 gen_sa_accounts.py --quick-setup 1 ```，复制返回的网址至浏览器打开，登陆上一步生成 ```credientials.json``` 文件时使用的账号，选择``` 允许``` ，然后复制返回的授权代码，粘贴至 ```SSH``` 终端，再复制新返回的网址至浏览器打开，使用刚才的账号登陆，点击 启用 ，回到 SSH 终端内按下回车，此时应该开始创建 SA 了，稍等片刻完成后可以看到 ```/root/AutoRclone/accounts/ ```目录下出现了一大堆 ```.json``` 后缀的 SA 授权文件。
+
+
+**手动方法（推荐）：**
+
+
 1.回到 SSH ，执行 ```python3 gen_sa_accounts.py --list-projects```
 
 如果之前没有创建过项目的话返回值应该是空的，那么此时执行 ```python3 gen_sa_accounts.py --create-projects 1 ```来新建一个项目，之后再次``` python3 gen_sa_accounts.py --list-projects```，复制一下新建的项目名称，下一步要用到；
