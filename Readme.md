@@ -1,4 +1,7 @@
-###一.先安装 python 3 和 AutoRclone：
+可下载：https://raw.githubusercontent.com/veip007/AutoRclone/master/gclone%20%E6%90%AC%E5%B1%B1%E4%B9%8B%E6%9C%AF.mhtml 观看
+
+
+### 一.先安装 python 3 和 AutoRclone：
 ```
 apt-get install -y python3 python3-pip git  # 安装系统依赖
 git clone https://github.com/veip007/AutoRclone  # 拉取 AutoRclone 项目
@@ -19,7 +22,7 @@ pip3 install -r requirements.txt  # 安装项目依赖
 
 4.执行 ```python3 gen_sa_accounts.py --download-keys ProjectName``` 下载项目中 SA 的授权文件，稍等片刻 ```~/AutoRclone/accounts/ ```目录下应该出现了一大堆 ```.json ```后缀的 SA 授权文件。
 
-###二.为 SA 添加权限
+### 二.为 SA 添加权限
 这个部分非常繁琐，主要是因为这一过程俺只能手动完成，如果你有 G-Suite 管理员权限，那么可以参考 这里 来快速添加，下面是手动方法：
 
 在此处：https://console.developers.google.com/apis/dashboard ，点击左侧的 ```凭据 ```可以看到创建好的项目及 SA ，自行想办法将 SA 的邮箱地址保存下来,命令如下：
@@ -30,7 +33,7 @@ pip3 install -r requirements.txt  # 安装项目依赖
 
 全部添加好之后点击右上角 ```关于``` ，记下【群组电子邮件】的地址，之后要对所有加入了群组的 SA 添加权限时，只需要添加至这个群组邮箱就行了。
 
-###三.使用 gclone 开始搬山
+### 三.使用 gclone 开始搬山
 
 ```bash <(wget -qO- https://raw.githubusercontent.com/veip007/AutoRclone/master/gclone.sh)```
 
@@ -93,7 +96,7 @@ service_account_file_path = /root/AutoRclone/accounts/
 
 浏览器中打开对应的团队盘 / 文件夹 / 文件，此时查看地址栏中类似``` https://drive.google.com/drive/u/2/folders/0App-QeDCIy_mUk9PVA ```这样的地址，其中末尾的 0App-QeDCIy_mUk9PVA 就是相应的团队盘 / 文件夹 / 文件对应的 ID 了，如果是别人分享出来的内容，那么结尾一般会多``` ?usp=sharing``` 这一段，把这段删掉，只保留 ID 就可以了。
 
-###四.一些注意事项
+### 四.一些注意事项
 
 1.生成 SA 及创建 Google Groups 使用普通的谷歌账号就可以；
 
