@@ -34,7 +34,9 @@ pip3 install -r requirements.txt  # 安装项目依赖
 这个部分非常繁琐，主要是因为这一过程俺只能手动完成，如果你有 G-Suite 管理员权限，那么可以参考 这里 来快速添加，下面是手动方法：
 
 在此处：https://console.developers.google.com/apis/dashboard ，点击左侧的 ```凭据 ```可以看到创建好的项目及 SA ，自行想办法将 SA 的邮箱地址保存下来,命令如下：
+
 ```cat $path/*.json | grep "client_email" | awk '{print $2}'| tr -d ',"' | sed 'N;N;N;N;N;N;N;N;N;/^$/d;G' > ~/email```
+
 ```cat ~/email```
 
 接下来创建群组。打开 https://groups.google.com/ ，点击左上角的``` 新建群组 ```，填写相关信息后新建一个群组，建立好后点击右上角 ```管理群组``` ，点击左侧``` 直接添加成员 ```，将刚才保存的 SA 邮箱粘贴过来，注意每次只能添加 10 个，24 小时内只能添加 100 个，每个群组最多添加 600 个，邮箱地址间使用英文逗号分隔。
