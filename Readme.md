@@ -35,7 +35,7 @@ pip3 install -r requirements.txt  # 安装项目依赖
 
 在此处：https://console.developers.google.com/apis/dashboard ，点击左侧的 ```凭据 ```可以看到创建好的项目及 SA ，自行想办法将 SA 的邮箱地址保存下来,命令如下：
 
-```cat $path/*.json | grep "client_email" | awk '{print $2}'| tr -d ',"' | sed 'N;N;N;N;N;N;N;N;N;/^$/d;G' > ~/email```
+```cat /root/AutoRclone/accounts/*.json | grep "client_email" | awk '{print $2}'| tr -d ',"' | sed 'N;N;N;N;N;N;N;N;N;/^$/d;G' > ~/email```
 
 ```cat ~/email```
 
