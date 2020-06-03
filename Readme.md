@@ -64,9 +64,10 @@ type = drive
 scope = drive
 service_account_file = /root/AutoRclone/accounts/1.json 
 service_account_file_path = /root/AutoRclone/accounts/
+team_drive = *****  
 ```
 
-其中 ```service_account_file_path ```是存放 SA 账号授权文件的文件夹路径，不要漏了最后的``` /``` ，上面一行是该路径下任意一个 SA 账号授权文件的路径，注意文件名，例子中``` 1.json``` 仅为简写，请务必修改为一个 SA 账号文件夹下的真实文件名。
+其中 ```service_account_file_path ```是存放 SA 账号授权文件的文件夹路径，不要漏了最后的``` /``` ，上面一行是该路径下任意一个 SA 账号授权文件的路径，注意文件名，例子中``` 1.json``` 仅为简写，请务必修改为一个 SA 账号文件夹下的真实文件名。```***```为团队盘ID
 
 用法：
 
